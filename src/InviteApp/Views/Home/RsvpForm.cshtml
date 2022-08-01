@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Invites</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <p>It's rsvp form!</p>
+    <form asp-action="RsvpForm" method="post">
+        <p>
+            <label for="Name">Your name: </label>
+            <input id="Name" name="Name"/>
+        </p>
+
+        <p>
+            <label for="Email">Your email: </label>
+            <input id="Email" name="Email"/>
+        </p>
+
+        <p>
+            <label for="Phone">Your hone: </label>
+            <input id="Phone" name="Phone"/>
+        </p>
+
+        <p>
+            <label for="WillAttend">Will you attend?</label>
+            <select id="WillAttend" name="WillAttend">
+                <option value="">Choose an option</option>
+                <option value="true">Yes, I will be there</option>
+                <option value="false">No, i can't come</option>
+            </select>
+        </p>
+
+        <button type="submit">Submit RSVP</button>
+    </form>
+</body>
+</html>

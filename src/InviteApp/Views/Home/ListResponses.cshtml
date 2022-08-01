@@ -1,0 +1,30 @@
+﻿@using InviteApp.Models
+@model IEnumerable<PartyInvitation>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invites</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+        </tr>
+        @foreach(var invitation in Model)
+        {
+            <tr>
+                <td>@invitation.Name</td>
+                <td>@invitation.Email</td>
+                <td>@invitation.Phone</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
