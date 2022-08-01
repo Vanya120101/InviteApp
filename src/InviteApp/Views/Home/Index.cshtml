@@ -4,13 +4,16 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Invites</title>
-        <meta charset="utf-8"/>
-    </head>
-    <body>
+<head>
+    <title>Invites</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="text-center">
         <p>@ViewBag.Greeting</p>
         <p>We are going to have a party! Do you want to join to us?</p>
-        <a asp-action="RsvpForm">Rspv now!</a>
-    </body>
+        <a class="btn btn-primary" asp-action="RsvpForm">Rspv now!</a>
+    </div>
+</body>
 </html>

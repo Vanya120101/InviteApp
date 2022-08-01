@@ -33,10 +33,12 @@ public class HomeController : Controller
 	[HttpPost]
 	public ViewResult RsvpForm(PartyInvitation partyInvitation)
 	{
+		if(!ModelState.IsValid) return View();
+
 		Repository.AddReponse(partyInvitation);
 		return View("Thanks", partyInvitation);
 	}
 
 	[HttpGet]
-	public ViewResult ListResponses() => View(Repository.PartyInvitions.Where(x => x.WillAtend == true));
+	public ViewResult ListResponses() => View(Repository.PartyInvitions.Where(x => x.WillAttend == true));
 }

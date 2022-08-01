@@ -1,4 +1,6 @@
-﻿@{
+﻿@using InviteApp.Models
+@model PartyInvitation
+@{
     Layout = null;
 }
 
@@ -6,35 +8,41 @@
 <head>
     <title>Invites</title>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
 <body>
-    <p>It's rsvp form!</p>
-    <form asp-action="RsvpForm" method="post">
-        <p>
-            <label for="Name">Your name: </label>
-            <input id="Name" name="Name"/>
-        </p>
+    <div class="panel panel-success" style="margin-left: 40%; margin-right:40%">
+        <div class="panel-heading text-center"> <h4>RSVP</h4></div>
+        <div class="panel-body">
+            <form class="p-a-1" asp-action="RsvpForm" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input class="form-control" asp-for="Name" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Your email: </label>
+                    <input class="form-control" asp-for="Email" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone">Your hone: </label>
+                    <input class="form-control" asp-for="Phone" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="WillAttend">Will you attend?</label>
+                    <select class="form-control" asp-for="WillAttend">
+                        <option value="">Choose an option</option>
+                        <option value="true">Yes, I will be there</option>
+                        <option value="false">No, i can't come</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit">Submit RSVP</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-        <p>
-            <label for="Email">Your email: </label>
-            <input id="Email" name="Email"/>
-        </p>
-
-        <p>
-            <label for="Phone">Your hone: </label>
-            <input id="Phone" name="Phone"/>
-        </p>
-
-        <p>
-            <label for="WillAttend">Will you attend?</label>
-            <select id="WillAttend" name="WillAttend">
-                <option value="">Choose an option</option>
-                <option value="true">Yes, I will be there</option>
-                <option value="false">No, i can't come</option>
-            </select>
-        </p>
-
-        <button type="submit">Submit RSVP</button>
-    </form>
 </body>
 </html>
